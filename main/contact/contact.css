@@ -1,0 +1,20 @@
+.background{
+    background-color: lightcoral;
+    margin-top: -22px;
+}
+.background h1{
+    text-align: center;
+}
+.main{
+  display: flex; 
+  flex-wrap: wrap;
+}
+.img-con{
+    width: 45vh;
+    border: 2px solid;
+    margin:0  auto 20px auto;
+    background-color: lightpink;
+}
+.img-con img{
+    width: 45vh;
+}

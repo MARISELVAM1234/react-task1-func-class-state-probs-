@@ -1,0 +1,13 @@
+.footer-part{
+    background-color:lightslategray;
+    height: 150px;
+  }
+.icon-part i{
+    font-size: 40px;
+    margin-left: 40px;
+    margin-top: 60px;
+}
+.icon-part{
+    display: flex;
+    justify-content: center;
+}

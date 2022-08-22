@@ -1,0 +1,24 @@
+.head{
+    background-color: lightsalmon;
+    margin-top: -22px;
+}
+.head h1{
+    text-align: center;
+}
+.chefs-part{
+    display: flex;
+    flex-wrap: wrap;
+}
+.chefs{
+    width: 45vh;
+    border: 2px solid;
+    margin:0  auto 20px auto;
+    background-color: lightpink;
+    transition: 0.7s;
+}
+.chefs:hover{
+    transform: scale(1.1);
+}
+.chefs img{
+    width: 45vh;
+}

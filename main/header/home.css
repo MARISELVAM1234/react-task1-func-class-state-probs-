@@ -1,0 +1,13 @@
+.header-part a{
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  .header-part {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px  0 15px 0;
+    font-size: 3.5vw;
+    background-color:rgb(39, 55, 70);
+    position: fixed;
+    width: 100vw;
+  }

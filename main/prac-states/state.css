@@ -1,0 +1,45 @@
+.tasty-part{
+    background-color: red;
+    margin-top: -22px;
+}
+.tasty-part h1{
+    text-align: center;
+}
+.prac-state{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+    
+}
+.div-part{
+    background-color: aqua;
+    /* margin-left: 20px; */
+    margin-bottom: 20px;
+}
+.div-part img {
+width: 300px;
+height: 300px;
+}
+.div-part h1{
+    font-size: 22px;
+}
+.div-part p{
+    font-size: 20px;
+    width: 300px;
+}
+.btn-part {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 10px;
+    
+   
+}
+.btn-part button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 10px ;
+    background-color: blueviolet;
+    /* border-radius: solid black; */
+}

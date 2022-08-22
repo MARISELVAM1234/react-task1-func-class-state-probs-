@@ -1,0 +1,16 @@
+.content{
+    background-color: lightslategray;
+    height: auto;
+  }
+  .content-part{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .left-side , .right-side{
+    margin-top: 160px;
+    margin-left: 20px;
+    width: 50%;
+}
+.left-side p , .right-side p{
+    font-size: 20px;
+}
