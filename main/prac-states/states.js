@@ -3,13 +3,19 @@ import pic1 from "../../assets/menu1.jpg"
 import pic2 from "../../assets/menu2.jpg"
 import pic3 from "../../assets/menu3.jpg"
 import pic4 from "../../assets/menu4.webp"
+import Child1  from "./child1";
+import Child2 from "./child2";
 import "./state.css"
 
 export class State1 extends Component {
   constructor() {
     super();
+    this.em ={
+      
+    }
     this.state = {
       // title  : 'reactJs'
+      empty :[],
       data: [
         {
           pic: pic1,
@@ -38,61 +44,33 @@ export class State1 extends Component {
       ],
     };
   }
+add = (value) =>{
+  console.log("value" , value );
+  this.setState({empty:[...this.state.empty , value] })
+}
+
+
   render() {
-    return  <div className="tasty-part">
-        <h1>TASTY MENU</h1>
+    return  <div className="menu-part">
+        <h1> MENU</h1>
     <div className ="prac-state">{this.state.data.map((ele,ind ) => (
      
-     <State2  key={ind} val1 = {ele.pic} val2 ={ele.head} val3 ={ele.parag} />
+     <Child1 key= {ind}  data = {ele} add = {this.add}/>
+
+   ))}
+   </div>
+
+   <h2> ADD TO CART</h2>
+   <div className ="prac-state">{this.state.empty.map((ele,ind ) => (
+     
+
+    
+     <Child2 key= {ind}  data = {ele}/>
 
    ))}
    </div>
    </div>
   }
 }
-
-
-
-export class State2 extends State1 {
-add = () =>{
-        console.log(this);
-        }
- 
-  // add 
-    render() {
-      return (
-        <div className="div-part">
-          <img src={this.props.val1} alt=""></img>
-          <h1>{this.props.val2}</h1>
-          <p>{this.props.val3}</p>
-          <div className="btn-part">
-          <button onClick={()=>this.add()}>Add to cart</button>
-
-          {/* <State3/> */}
-          </div>
-        </div>
-      )
-     
-    }
-   
-  }
-
-
-  // import React, { Component } from 'react'
-  
-  export class State3 extends State2 {
-    render() {
-      return (
-        <div>states
-        </div>
-      )
-    }
-  }
-  
-  
- 
-   
- 
-  
 
   export default State1;
