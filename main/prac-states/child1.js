@@ -3,9 +3,9 @@ import "./state.css"
 
 export class Child1 extends Component {
 
-  add = () =>{
+  add2 = () =>{
     console.log("value"  , this );
-    this.props.add(this.props.data)
+    this.props.add1(this.props.data)
   }
 
 
@@ -16,7 +16,7 @@ export class Child1 extends Component {
         <h1>{this.props.data.head}</h1>
         <p>{this.props.data.parag}</p>
         <div className="btn-part">
-          <button onClick={() => this.add()}>Add to cart</button>
+          <button onClick={() => this.add2()}>Add to cart</button>
         </div>
       </div>
     );
