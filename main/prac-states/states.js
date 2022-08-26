@@ -45,47 +45,50 @@ export class State1 extends Component {
       ],
     };
   }
-  
+
   add = (value) => {
-    console.log( "cart",this.state.empty);
-    if (!(this.state.empty.includes(value))){
+    console.log("cart", this.state.empty);
+    if (!this.state.empty.includes(value)) {
       console.log("value", value);
       this.setState({ empty: [...this.state.empty, value] });
-    }  
-    else{
-      this.setState({qty: value.qty++})
-      console.log(this.state.empty);
     }
-
+    //else {
+    //   this.setState({ qty: value.qty++ });
+    //   console.log(this.state.empty);
+    // }
+  };
+  plusQty = (plusqty) => {
+   
+    this.setState({ qty: plusqty.qty++ });
+    // if ( plusqty.qty === 0){
+    //   this.setState({qty:plusqty.qty++})
+    // }
+    
   };
 
-  remove =  (remo) =>{
-   
-    // {this.state.empty.filter(remoFun)}
-    // function remoFun (a){
-    //  console.log("a" ,a );
-    // }
+  removeQty = (reqty) => {
+    // console.log(reqty);
+    this.setState({ qty: reqty.qty-- });
+    if (reqty.qty === 0) {
+      console.log(reqty.qty);
+      let removeEle = this.state.empty.filter((val) => {
+        return val !== reqty;
+      });
+      
+      this.setState({ empty: removeEle });
+      this.setState({qty:reqty.qty++})
+    }
+  };
 
-// let store = [...this.state.empty]
-let removeEle =this.state.empty.filter((val)=>{
-  return val !== remo 
-})
-this.setState({empty:removeEle})
-
-    
-// console.log(remo);
-
-  }
-
-
-
-
-
-    // this.setState({qty: remo.qty--})
-    // console.log(this.state.empty);
-      // }
-
-
+  // remove = (remo) => {
+  //   let removeEle = this.state.empty.filter((val) => {
+  //     // console.log( "val",val);
+  //     // console.log("remo",remo);
+  //     return val !== remo;
+  //   });
+  //   // console.log("removeEle",removeEle);
+  //   this.setState({ empty: removeEle });
+  // };
 
   render() {
     return (
@@ -100,7 +103,13 @@ this.setState({empty:removeEle})
         <h2> ADD PRODUCT</h2>
         <div className="prac-state">
           {this.state.empty.map((ele, ind) => (
-            <Child2 key={ind} data={ele}  remove1 = {this.remove}/>
+            <Child2
+              key={ind}
+              data={ele}
+              // remove1={this.remove}
+              removeQty={this.removeQty}
+              plusQty={this.plusQty}
+            />
           ))}
         </div>
       </div>
