@@ -4,9 +4,15 @@ import "./state.css"
 export class Child2 extends Component {
 
 
-  remove2 = () =>{
-    console.log("remove"  , this );
-    this.props.remove1(this.props.data)
+  // remove2 = () =>{
+  //   console.log("remove"  , this );
+  //   this.props.remove1(this.props.data)
+  // }
+  plusQty =() =>{
+   this.props.plusQty(this.props.data)
+  }
+  removeQty = ()=>{
+    this.props.removeQty(this.props.data)
   }
 
   render() {
@@ -20,7 +26,9 @@ export class Child2 extends Component {
         <h3> qty : {this.props.data.qty}</h3>
 
         <div className="btn-part">
-          <button id="remove-btn" onClick={() => this.remove2()}>Remove cart</button>
+          <button id="remove-btn" onClick={() => this.removeQty()}>-</button>
+          <button onClick={()=> this.plusQty()}>+</button>
+
 
         </div>
       </div>
