@@ -4,6 +4,7 @@ import "./state.css"
 export class Child1 extends Component {
 
   add2 = () =>{
+    // if ()
     console.log("value"  , this );
     this.props.add1(this.props.data)
   }
